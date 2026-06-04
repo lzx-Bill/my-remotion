@@ -1,0 +1,32 @@
+{
+  "name": "my-remotion",
+  "version": "1.0.0",
+  "description": "Case-based Remotion workspace for reusable video projects",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "npm run render:hello",
+    "render:hello": "remotion render HelloWorld out/hello-world/hello-world.mp4",
+    "render:logo": "remotion render OnlyLogo out/hello-world/only-logo.mp4",
+    "render:trending": "remotion render GitHubTrending out/github-trending/github-trending-2026-06-02.mp4",
+    "render:novel:scene00": "remotion render Novel-00-天师下岗 out/novel-zhongkui/scenes/novel-00.mp4",
+    "comps": "remotion compositions",
+    "upgrade": "remotion upgrade",
+    "lint": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@remotion/cli": "4.0.471",
+    "@remotion/zod-types": "4.0.471",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.471",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "typescript": "5.9.3"
+  },
+  "private": true
+}
