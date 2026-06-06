@@ -9,7 +9,10 @@
     "render:hello": "remotion render HelloWorld out/hello-world/hello-world.mp4",
     "render:logo": "remotion render OnlyLogo out/hello-world/only-logo.mp4",
     "render:trending": "remotion render GitHubTrending out/github-trending/github-trending-2026-06-02.mp4",
-    "render:novel:scene00": "remotion render Novel-00-天师下岗 out/novel-zhongkui/scenes/novel-00.mp4",
+    "render:novel:scene00": "remotion render Novel-00-天师下岗 out/novel/scenes/novel-00.mp4",
+    "render:novel:cover": "remotion render Novel-Cover out/novel/scenes/_cover.mp4",
+    "render:novel:outro": "remotion render Novel-Outro out/novel/scenes/_outro.mp4",
+    "render:pythagorean": "remotion render PythagoreanTheorem out/pythagorean-theorem/pythagorean-theorem.mp4",
     "comps": "remotion compositions",
     "upgrade": "remotion upgrade",
     "lint": "tsc --noEmit"

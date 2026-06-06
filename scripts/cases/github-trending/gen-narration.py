@@ -83,21 +83,25 @@ async def gen_one(seg):
         pitch="+0Hz",
     )
     await comm.save(str(out))
-    # 测真实朗读时长:用 silenceremove 去掉末尾静音,得到"最后一个有声音"的时间
-    cmd = [
-        "ffmpeg", "-i", str(out),
-        "-af", "silenceremove=stop_periods=-1:stop_duration=0.3",
-        "-f", "null", "-",
-    ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    # 解析 ffmpeg stderr 找 "time=HH:MM:SS.MS" 最后一个
-    import re
-    times = re.findall(r"time=(\d+):(\d+):(\d+\.\d+)", result.stderr)
-    if times:
-        h, m, s = times[-1]
-        real_duration = int(h) * 3600 + int(m) * 60 + float(s)
-    else:
-        real_duration = 0
+    # 测真实朗读时长:用 ffprobe 直接读容器时长
+    # ❌ 不要用 ffmpeg -f null + 解析 stderr "time=" 标记
+    #    1) time= 是输出时间戳不是输入时长
+    #    2) silenceremove 滤镜会干扰 time= 输出
+    #    3) 历史教训: 这种写法在 gen-novel-tts.py 段尾出现 25-35s 静默
+    # 详见: scripts/cases/novel/verify_audio_durations.py / memory: ffmpeg-probe-gotchas.md
+    result = subprocess.run(
+        [
+            "ffprobe", "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(out),
+        ],
+        capture_output=True, text=True, check=True,
+    )
+    try:
+        real_duration = float(result.stdout.strip())
+    except ValueError:
+        real_duration = 0.0
     print(f"  ✓ {seg['name']}.mp3  real_voice={real_duration:.2f}s  '{seg['text'][:30]}...'")
     return out, real_duration
 

@@ -1,0 +1,134 @@
+{
+  "name": "zhongkui",
+  "title": "钟馗转行做捉鬼主播",
+  "subtitle": "1200岁天师被迫直播",
+  "author": "未知（原创网络小说）",
+  "total_episodes": 29,
+  "source_file": "zhongkui.md",
+
+  "tts": {
+    "voice": "zh-CN-YunjianNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz",
+    "concurrency": 4
+  },
+
+  "asr": {
+    "model": "small",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "zh",
+    "vad_min_silence_ms": 600
+  },
+
+  "image": {
+    "default_prompt_template": "A scene from {genre} novel, chapter '{chapter}' ({chapter_en}). Visual elements: {keywords}. Dark fantasy cinematic style, painterly, atmospheric, 16:9 widescreen, moody lighting, traditional Chinese architecture mixed with modern elements, no text, no watermark, no logos, no characters in modern clothing",
+    "genre": "Chinese underworld fantasy",
+    "batch_size": 2
+  },
+
+  "split": {
+    "min_chars": 300,
+    "max_chars": 900,
+    "est_chars_per_sec": 4.5
+  },
+
+  "video": {
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "cover_duration_s": 5,
+    "outro_duration_s": 6
+  },
+
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "一、天师下岗",
+      "title_en": "underworld office",
+      "sceneEmoji": "🏮",
+      "bgColor1": "#1a0f0a",
+      "bgColor2": "#0a0508"
+    },
+    {
+      "id": "ch02",
+      "title": "二、面试",
+      "title_en": "job interview",
+      "sceneEmoji": "📄",
+      "bgColor1": "#0a1a12",
+      "bgColor2": "#080f0a"
+    },
+    {
+      "id": "ch03",
+      "title": "三、首播",
+      "title_en": "first live stream",
+      "sceneEmoji": "📱",
+      "bgColor1": "#1a0a14",
+      "bgColor2": "#0e050d"
+    },
+    {
+      "id": "ch04",
+      "title": "四、爆款",
+      "title_en": "going viral",
+      "sceneEmoji": "🔥",
+      "bgColor1": "#241106",
+      "bgColor2": "#0f0604"
+    },
+    {
+      "id": "ch05",
+      "title": "五、真相",
+      "title_en": "real vs fake",
+      "sceneEmoji": "🪞",
+      "bgColor1": "#081822",
+      "bgColor2": "#050b10"
+    },
+    {
+      "id": "ch06",
+      "title": "六、停播",
+      "title_en": "stream stopped",
+      "sceneEmoji": "⏸",
+      "bgColor1": "#131313",
+      "bgColor2": "#050505"
+    },
+    {
+      "id": "ch07",
+      "title": "七、重播",
+      "title_en": "comeback",
+      "sceneEmoji": "🌱",
+      "bgColor1": "#102018",
+      "bgColor2": "#08100d"
+    },
+    {
+      "id": "ch08",
+      "title": "八、最后一卦",
+      "title_en": "final battle",
+      "sceneEmoji": "⚔",
+      "bgColor1": "#220d0d",
+      "bgColor2": "#0d0404"
+    },
+    {
+      "id": "ch09",
+      "title": "九、尾声",
+      "title_en": "epilogue",
+      "sceneEmoji": "🌘",
+      "bgColor1": "#101622",
+      "bgColor2": "#05080d"
+    }
+  ],
+
+  "cover": {
+    "chapter_label": "钟馗转行做捉鬼主播",
+    "scene_image_url": "https://cdn.hailuoai.com/mcp/u510193829962223619/general/1780581977_c36647f7.png",
+    "subtitles": ["开篇", "原创小说视频化"]
+  },
+
+  "outro": {
+    "chapter_label": "片尾",
+    "audio_file": "outro-bgm-trimmed.mp3",
+    "audio_duration_s": 6,
+    "sceneEmoji": "🌘",
+    "bgColor1": "#101622",
+    "bgColor2": "#05080d",
+    "subtitles": ["感谢您的观看", "全{total_episodes}集 · 完"]
+  }
+}

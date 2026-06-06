@@ -1,14 +1,43 @@
+# --- Build artifacts ---
 node_modules/
 out/
 dist/
 .cache/
-.DS_Store
+
+# --- Logs ---
 *.log
 *.err
 logs/
+
+# --- Python ---
 __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# --- Env / secrets ---
 .env
 .env.local
+
+# --- Tool/system dirs (do NOT commit runtime/session data) ---
+.mavis/
+.opencode/
+
+# --- Temporary assets dropped in repo root (MCP downloads etc.) ---
+matrix-media-*.png
+
+# --- Reference materials (large markdown not part of source pipeline) ---
+reference/
+
+# --- Render artifacts (TTS audio, AI scenes, cover images) ---
+# Re-generate via scripts/cases/<case>/master-novel.py
+public/assets/cases/*/audio/
+public/assets/cases/*/scenes/
+public/assets/cases/*/cover-selected.png
+
+# --- Pipeline intermediate artifacts (re-derivable from source + manifest) ---
+data/cases/*/chunks/asr_cache_*.json
+data/cases/*/chunks/chunks.json
+data/cases/*/chunks/concat-list.txt
+data/cases/*/chunks/img-req.json
+data/cases/*/image-requests/img-req-*.json
