@@ -1,5 +1,12 @@
 # AGENTS
 
+> **任何 agent / 工具进入此项目前必读**:本文件以下所有规则都是硬约束,不接受"忘了"或"我不知道"。
+> 流水线、文件摆放、提交纪律全部按本文件执行。
+> **新会话/新 agent 第一步**:`Read` 这个文件全文(尤其本文件后半段 6 个 Rules 段)。
+> **要 enforce 的脚本**:`scripts/common/clean-output.py`(dry-run by default)。
+> **Git 提交 hook**:`.githooks/pre-commit`(自动拦截 >10MB 文件 / out/ 内容 / 根目录临时 png)。
+> **启用 hook**(一次性):`git config core.hooksPath .githooks`。
+
 ## Project Intent
 
 这是一个多案例 Remotion 工作区。目标不是做单一 demo，而是长期维护多个视频案例及其配套流水线。
