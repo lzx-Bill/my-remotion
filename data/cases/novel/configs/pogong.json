@@ -1,0 +1,110 @@
+{
+  "name": "pogong",
+  "title": "我给婆婆买了一套房，她转头写了我小姑子的名字",
+  "subtitle": "女频·婆媳关系·婚姻危机",
+  "author": "未知（网络原创）",
+  "total_episodes": 0,
+  "source_file": "pogong.md",
+
+  "tts": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz",
+    "concurrency": 4
+  },
+
+  "asr": {
+    "model": "small",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "zh",
+    "vad_min_silence_ms": 600
+  },
+
+  "image": {
+    "default_prompt_template": "A scene from Chinese realistic family drama novel, chapter '{chapter}' ({chapter_en}). Visual elements: {keywords}. Cinematic photography, 35mm film grain, realistic lighting, modern Chinese urban home interior (apartment, kitchen, living room, bedroom, real estate office, court), emotional tension, muted color palette, no text, no watermark, no logos, 16:9 widescreen",
+    "genre": "Chinese realistic family drama",
+    "batch_size": 2
+  },
+
+  "split": {
+    "min_chars": 300,
+    "max_chars": 900,
+    "est_chars_per_sec": 4.5
+  },
+
+  "video": {
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "cover_duration_s": 5,
+    "outro_duration_s": 6
+  },
+
+  "chapters": [
+    {
+      "id": "ch00",
+      "title": "我给婆婆买了一套房，她转头写了我小姑子的名字",
+      "title_en": "preface the property",
+      "sceneEmoji": "🏠",
+      "bgColor1": "#2a1a12",
+      "bgColor2": "#15080a"
+    },
+    {
+      "id": "ch01",
+      "title": "第二章·那些被吃掉的委屈",
+      "title_en": "swallowed grievances",
+      "sceneEmoji": "😔",
+      "bgColor1": "#1a1a2a",
+      "bgColor2": "#0a0a15"
+    },
+    {
+      "id": "ch02",
+      "title": "第三章·裂缝",
+      "title_en": "the crack widens",
+      "sceneEmoji": "💔",
+      "bgColor1": "#2a1a1a",
+      "bgColor2": "#150a0a"
+    },
+    {
+      "id": "ch03",
+      "title": "第四章·觉醒",
+      "title_en": "awakening at the courthouse",
+      "sceneEmoji": "⚡",
+      "bgColor1": "#2a2a1a",
+      "bgColor2": "#15150a"
+    },
+    {
+      "id": "ch04",
+      "title": "第五章·决断",
+      "title_en": "the final verdict",
+      "sceneEmoji": "⚖️",
+      "bgColor1": "#1a2a1a",
+      "bgColor2": "#0a150a"
+    },
+    {
+      "id": "ch06",
+      "title": "尾声",
+      "title_en": "epilogue",
+      "sceneEmoji": "🌸",
+      "bgColor1": "#1a2a1a",
+      "bgColor2": "#0a150a"
+    }
+  ],
+
+  "cover": {
+    "chapter_label": "我给婆婆买了一套房",
+    "scene_image_url": "",
+    "subtitles": ["开篇", "原创网络小说视频化"]
+  },
+
+  "outro": {
+    "chapter_label": "片尾",
+    "audio_file": "outro-bgm-trimmed.mp3",
+    "audio_duration_s": 6,
+    "sceneEmoji": "🌸",
+    "bgColor1": "#1a2a1a",
+    "bgColor2": "#0a150a",
+    "subtitles": ["感谢您的观看", "全{total_episodes}集 · 完"]
+  }
+}

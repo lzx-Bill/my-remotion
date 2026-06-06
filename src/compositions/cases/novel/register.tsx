@@ -1,7 +1,9 @@
 import { Composition } from "remotion";
 import { useMemo } from "react";
+import paishengConfigJson from "../../../../data/cases/novel/configs/paisheng.json";
+import zhongkuiConfigJson from "../../../../data/cases/novel/configs/zhongkui.json";
+import pogongConfigJson from "../../../../data/cases/novel/configs/pogong.json";
 import manifestJson from "../../../../data/cases/novel/chunks/manifest.json";
-import configJson from "../../../../data/cases/novel/configs/paisheng.json";
 import { DEFAULT_VIDEO_CONFIG } from "../../common/video";
 import { NovelScene, novelSceneSchema } from "./NovelScene";
 
@@ -9,7 +11,21 @@ import { NovelScene, novelSceneSchema } from "./NovelScene";
 // 案例配置: 单本小说一份 configs/<name>.json
 // 切换小说 = 改 ACTIVE_CASE 常量(或设置 NOVEL_CASE 环境变量)
 // =====================================================================
-const ACTIVE_CASE = "paisheng";
+const CONFIGS: Record<string, unknown> = {
+  paisheng: paishengConfigJson,
+  zhongkui: zhongkuiConfigJson,
+  pogong: pogongConfigJson,
+};
+// Note: process.env.NOVEL_CASE is not available at webpack build time
+// (no DefinePlugin in remotion.config.ts). Hardcode for now; toggle here
+// to switch novels. AGENTS.md "Novel Case Rules" — same intent.
+const ACTIVE_CASE = "pogong";
+const configJson = CONFIGS[ACTIVE_CASE];
+if (!configJson) {
+  throw new Error(
+    `Unknown NOVEL_CASE=${ACTIVE_CASE}. Add it to register.tsx CONFIGS map.`,
+  );
+}
 
 type Cue = { start: number; end: number; text: string };
 type ManifestItem = {
